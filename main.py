@@ -32,7 +32,7 @@ def wrapper_query(query_dataset, digimon, result_dir):
     all_res = []
 
     dataset_len = len(query_dataset)
-    dataset_len = 10
+    # dataset_len = 10
     
     for _, i in enumerate(range(dataset_len)):
         query = query_dataset[i]
@@ -55,6 +55,15 @@ async def wrapper_evaluation(path, opt, result_dir):
 
 
 if __name__ == "__main__":
+    # https://docs.arize.com/phoenix/integrations/llm-providers/openai/openai-tracing
+    # pip install openinference-instrumentation-openai openai
+    from phoenix.otel import register
+
+    # configure the Phoenix tracer
+    tracer_provider = register(
+        project_name="my-llm-app",  # Default is 'default'
+        auto_instrument=True  # Auto-instrument your app based on installed dependencies
+    )
 
     # with open("./book.txt") as f:
     #     doc = f.read()

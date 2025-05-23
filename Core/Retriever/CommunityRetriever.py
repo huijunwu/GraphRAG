@@ -65,6 +65,7 @@ class CommunityRetriever(BaseRetriever):
 
     @register_retriever_method(type="community", method_name="from_level")
     async def find_relevant_community_by_level(self, seed=None):
+        logger.warning('find_relevant_community_by_level %s', self.config)
         community_schema = self.community.community_schema
         community_schema = {
             k: v for k, v in community_schema.items() if v.level <= self.config.level

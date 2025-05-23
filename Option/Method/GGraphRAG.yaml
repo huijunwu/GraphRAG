@@ -57,7 +57,8 @@ retriever:
     damping: 0.1
     top_k: 5
     max_token_for_local_context: 4800  # 12000 * 0.4
-    
+    level: 2
+
 query: 
     query_type: qa
     only_need_context: False

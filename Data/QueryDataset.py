@@ -8,10 +8,10 @@ class RAGQueryDataset(Dataset):
       
         self.corpus_path = os.path.join(data_dir, "Corpus.json")
         self.qa_path = os.path.join(data_dir, "Question.json")
-        self.dataset = pd.read_json(self.qa_path, lines=True, orient="records")
+        self.dataset = pd.read_json(self.qa_path, lines=True, orient="records").sample(n=1, random_state=42)
 
     def get_corpus(self):
-        corpus = pd.read_json(self.corpus_path, lines=True)
+        corpus = pd.read_json(self.corpus_path, lines=True).sample(n=1, random_state=42)
         corpus_list = []
         for i in range(len(corpus)):
             corpus_list.append(

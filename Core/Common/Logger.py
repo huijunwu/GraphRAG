@@ -9,7 +9,7 @@ from Option.Config2 import default_config
 _print_level = "INFO"
 
 
-def define_log_level(print_level="INFO", logfile_level="DEBUG", name: str = None):
+def define_log_level(print_level="DEBUG", logfile_level="DEBUG", name: str = None):
     """Adjust the log level to above level"""
     global _print_level
     _print_level = print_level
@@ -45,5 +45,5 @@ def set_llm_stream_logfunc(func):
 
 
 def _llm_stream_log(msg):
-    if _print_level in ["INFO"]:
+    if _print_level in ["INFO", "DEBUG"]:
         print(msg, end="")
