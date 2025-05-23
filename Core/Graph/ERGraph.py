@@ -135,7 +135,6 @@ class ERGraph(BaseGraph):
                triples (List[Tuple[str, str, str]]): A list of triples, where each triple contains three strings (source entity, relation, target entity).
                chunk_key (str): A key used to identify the data chunk.
            """
-        logger.debug(f"_build_graph_from_tuples, entities is:\n{entities}\n, triples is\n{triples}\n")
         maybe_nodes, maybe_edges = defaultdict(list), defaultdict(list)
 
         for _entity in entities:
