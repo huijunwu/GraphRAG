@@ -3,15 +3,18 @@ from torch.utils.data import Dataset
 import os
 
 class RAGQueryDataset(Dataset):
-    def __init__(self,data_dir):
+    def __init__(self,data_dir, n_corpus=1, n_qa=1, random_state=42):
         super().__init__()
+        self.random_state = random_state
+        self.n_corpus = n_corpus
+        self.n_qa = n_qa
       
         self.corpus_path = os.path.join(data_dir, "Corpus.json")
         self.qa_path = os.path.join(data_dir, "Question.json")
-        self.dataset = pd.read_json(self.qa_path, lines=True, orient="records").sample(n=1, random_state=42)
+        self.dataset = pd.read_json(self.qa_path, lines=True, orient="records").sample(n=self.n_qa, random_state=self.random_state)
 
     def get_corpus(self):
-        corpus = pd.read_json(self.corpus_path, lines=True).sample(n=1, random_state=42)
+        corpus = pd.read_json(self.corpus_path, lines=True).sample(n=self.n_corpus, random_state=self.random_state)
         corpus_list = []
         for i in range(len(corpus)):
             corpus_list.append(
