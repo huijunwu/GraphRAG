@@ -8,7 +8,7 @@ from shutil import copyfile
 from Data.QueryDataset import RAGQueryDataset
 import pandas as pd
 from Core.Utils.Evaluation import Evaluator
-
+from Core.Common.Logger import logger
 
 
 def check_dirs(opt):
@@ -65,32 +65,35 @@ if __name__ == "__main__":
         auto_instrument=True  # Auto-instrument your app based on installed dependencies
     )
 
-    # with open("./book.txt") as f:
-    #     doc = f.read()
+    try:
+        # with open("./book.txt") as f:
+        #     doc = f.read()
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-opt", type=str, help="Path to option YMAL file.")
-    parser.add_argument("-dataset_name", type=str, help="Name of the dataset.")
-    args = parser.parse_args()
+        parser = argparse.ArgumentParser()
+        parser.add_argument("-opt", type=str, help="Path to option YMAL file.")
+        parser.add_argument("-dataset_name", type=str, help="Name of the dataset.")
+        args = parser.parse_args()
 
-    opt = Config.parse(Path(args.opt), dataset_name=args.dataset_name)
-    digimon = GraphRAG(config=opt)
-    result_dir = check_dirs(opt)
+        opt = Config.parse(Path(args.opt), dataset_name=args.dataset_name)
+        digimon = GraphRAG(config=opt)
+        result_dir = check_dirs(opt)
 
-    query_dataset = RAGQueryDataset(
-        data_dir=os.path.join(opt.data_root, opt.dataset_name)
-    )
-    corpus = query_dataset.get_corpus()
-    # corpus = corpus[:10]
+        query_dataset = RAGQueryDataset(
+            data_dir=os.path.join(opt.data_root, opt.dataset_name)
+        )
+        corpus = query_dataset.get_corpus()
+        # corpus = corpus[:10]
 
-    asyncio.run(digimon.insert(corpus))
+        asyncio.run(digimon.insert(corpus))
 
-    save_path = wrapper_query(query_dataset, digimon, result_dir)
+        save_path = wrapper_query(query_dataset, digimon, result_dir)
 
-    asyncio.run(wrapper_evaluation(save_path, opt, result_dir))
+        asyncio.run(wrapper_evaluation(save_path, opt, result_dir))
 
-    # for train_item in dataloader:
+        # for train_item in dataloader:
 
-    # a = asyncio.run(digimon.query("Who is Fred Gehrke?"))
+        # a = asyncio.run(digimon.query("Who is Fred Gehrke?"))
 
-    # asyncio.run(digimon.query("Who is Scrooge?"))
+        # asyncio.run(digimon.query("Who is Scrooge?"))
+    except Exception as e:
+        logger.exception("main exception: {}", e)

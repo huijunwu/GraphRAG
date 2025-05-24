@@ -31,18 +31,19 @@ datasets=(
 
 # ls Option/Method/*.yaml | sort
 yaml_files=(
-#  Option/Method/Dalk.yaml
-#  Option/Method/GGraphRAG.yaml
-#  Option/Method/GR.yaml
-#  Option/Method/HippoRAG.yaml
-#  Option/Method/KGP.yaml
-#  Option/Method/LGraphRAG.yaml
-#  Option/Method/LightRAG.yaml
-#  Option/Method/MedG.yaml
-#  Option/Method/RAPTOR.yaml
+  Option/Method/Dalk.yaml
+  Option/Method/GGraphRAG.yaml
+  Option/Method/GR.yaml
+  Option/Method/HippoRAG.yaml
+  Option/Method/KGP.yaml
+  Option/Method/LGraphRAG.yaml
+  Option/Method/LightRAG.yaml
+  Option/Method/MedG.yaml
+  Option/Method/RAPTOR.yaml
   Option/Method/ToG.yaml
 )
 
+rm -rf "my_result/my_test/"
 # Loop over datasets
 for dataset in "${datasets[@]}"; do
   rm -rf "my_result/$dataset"
