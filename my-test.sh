@@ -37,14 +37,15 @@ yaml_files=(
 #  Option/Method/HippoRAG.yaml
 #  Option/Method/KGP.yaml
 #  Option/Method/LGraphRAG.yaml
-  Option/Method/LightRAG.yaml
+#  Option/Method/LightRAG.yaml
 #  Option/Method/MedG.yaml
 #  Option/Method/RAPTOR.yaml
-#  Option/Method/ToG.yaml
+  Option/Method/ToG.yaml
 )
 
 # Loop over datasets
 for dataset in "${datasets[@]}"; do
+  rm -rf "my_result/$dataset"
   # Loop over YAML files in alphabetical order
   for yaml in "${yaml_files[@]}"; do
     echo "Running: $yaml on dataset: $dataset"
