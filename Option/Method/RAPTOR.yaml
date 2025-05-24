@@ -10,7 +10,7 @@ enable_graph_augmentation: False
 
 index_name: tree_graph_balanced
 
-vdb_type: faiss  # vector/colbert
+vdb_type: vector  # vector/colbert
 
 # Chunk Config 
 chunk:

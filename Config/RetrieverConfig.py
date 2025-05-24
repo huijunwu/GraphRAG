@@ -20,3 +20,4 @@ class RetrieverConfig(YamlModel):
     use_subgraphs_vdb: bool = False
     global_max_consider_community: int = 512
     global_min_community_rating: float = 0.0
+    level: int = 2
