@@ -65,7 +65,7 @@ class CommunityRetriever(BaseRetriever):
 
     @register_retriever_method(type="community", method_name="from_level")
     async def find_relevant_community_by_level(self, seed=None):
-        logger.warning('find_relevant_community_by_level {}', self.config)
+        logger.debug('find_relevant_community_by_level {}', self.config)
         community_schema = self.community.community_schema
         community_schema = {
             k: v for k, v in community_schema.items() if v.level <= self.config.level
@@ -92,7 +92,7 @@ class CommunityRetriever(BaseRetriever):
             for c in community_datas
             if c["report_json"].get("rating", 0) >= self.config.global_min_community_rating
         ]
-        logger.warning('find_relevant_community_by_level {}', community_datas[0])
+        logger.debug('find_relevant_community_by_level {}', community_datas[0])
         community_datas = sorted(
             community_datas,
             key=lambda x: (x['community_info']['occurrence'], x["report_json"].get("rating", 0)),

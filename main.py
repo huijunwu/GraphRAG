@@ -9,6 +9,9 @@ from Data.QueryDataset import RAGQueryDataset
 import pandas as pd
 from Core.Utils.Evaluation import Evaluator
 from Core.Common.Logger import logger
+# https://docs.arize.com/phoenix/integrations/llm-providers/openai/openai-tracing
+# pip install openinference-instrumentation-openai openai
+from phoenix.otel import register
 
 
 def check_dirs(opt):
@@ -55,16 +58,6 @@ async def wrapper_evaluation(path, opt, result_dir):
 
 
 if __name__ == "__main__":
-    # https://docs.arize.com/phoenix/integrations/llm-providers/openai/openai-tracing
-    # pip install openinference-instrumentation-openai openai
-    from phoenix.otel import register
-
-    # configure the Phoenix tracer
-    tracer_provider = register(
-        project_name="my-llm-app",  # Default is 'default'
-        auto_instrument=True  # Auto-instrument your app based on installed dependencies
-    )
-
     try:
         # with open("./book.txt") as f:
         #     doc = f.read()
@@ -73,6 +66,11 @@ if __name__ == "__main__":
         parser.add_argument("-opt", type=str, help="Path to option YMAL file.")
         parser.add_argument("-dataset_name", type=str, help="Name of the dataset.")
         args = parser.parse_args()
+        # configure the Phoenix tracer
+        tracer_provider = register(
+            project_name=f"{args.dataset_name}.{args.opt}",  # Default is 'default'
+            auto_instrument=True  # Auto-instrument your app based on installed dependencies
+        )
 
         opt = Config.parse(Path(args.opt), dataset_name=args.dataset_name)
         digimon = GraphRAG(config=opt)

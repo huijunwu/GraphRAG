@@ -2,23 +2,23 @@ llm:
   api_type: "openai"
   base_url: "http://localhost:4000/v1"
   model: "o1-mini"
-  # api_key: "sk-1234567890abcdef1234567890abcdef"
+  # api_key: "YOUR_API_KEY"
 
 embedding:
   api_type: "openai"
   base_url: "http://localhost:4000/v1"
-  # api_key: "sk-1234567890abcdef1234567890abcdef"
+  # api_key: "YOUR_API_KEY"
   model: "text-embedding-3-small"
   cache_dir: ""
 #  dimensions: 1024
-  max_token_size: 8192
+  max_token_size: 8102
   embed_batch_size: 128
   embedding_func_max_async: 16
 
-data_root: "./datasets"       # Root directory for data
+data_root:  "./datasets" # Root directory for data
 
 
 
-working_dir: "./my_result"    # Result directory for the experiment
-exp_name: "my_test"           # Experiment name
+working_dir: "./my_result" # Result directory for the experiment
+exp_name: "my_test" # Experiment name
 #
