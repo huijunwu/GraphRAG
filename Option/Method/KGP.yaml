@@ -1,6 +1,6 @@
 ################################# Working settings  #################################
 # Data
-index_name: passage_of_graph
+index_name: kgp_passage_of_graph
 
 vdb_type: vector  # vector/colbert
 

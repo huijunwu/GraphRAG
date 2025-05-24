@@ -16,8 +16,8 @@ export PHOENIX_COLLECTOR_ENDPOINT=http://localhost:6006
 
 # Ordered datasets (by Corpus.json size, then Question.json)
 datasets=(
-  mix
-#  multihop-rag
+#  mix
+  multihop-rag
 #  multihop-rag-summary
 #  quality
 #  agriculture
@@ -33,11 +33,11 @@ datasets=(
 yaml_files=(
 #  Option/Method/Dalk.yaml
 #  Option/Method/GGraphRAG.yaml
-  Option/Method/GR.yaml
+#  Option/Method/GR.yaml
 #  Option/Method/HippoRAG.yaml
 #  Option/Method/KGP.yaml
 #  Option/Method/LGraphRAG.yaml
-#  Option/Method/LightRAG.yaml
+  Option/Method/LightRAG.yaml
 #  Option/Method/MedG.yaml
 #  Option/Method/RAPTOR.yaml
 #  Option/Method/ToG.yaml

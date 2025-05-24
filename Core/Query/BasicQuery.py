@@ -222,12 +222,12 @@ class BasicQuery(BaseQuery):
         elif self.config.community_information and not self.config.use_keywords and self.config.enable_local:
             sys_prompt_temp = QueryPrompt.LOCAL_RAG_RESPONSE
         else:
-            logger.error("Invalid query configuration")
+            logger.error("Invalid query configuration {}", self.config)
             return QueryPrompt.FAIL_RESPONSE
         response = await self.llm.aask(
             query,
             system_msgs=[sys_prompt_temp.format(
-                report_data=context, response_type=self.config.response_type
+                context_data=context, response_type=self.config.response_type
             )],
         )
         return response

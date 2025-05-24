@@ -8,7 +8,7 @@ enable_graph_augmentation: False
 
 # Data
 
-index_name: tree_graph_balanced
+index_name: raptor_tree_graph_balanced
 
 vdb_type: vector  # vector/colbert
 

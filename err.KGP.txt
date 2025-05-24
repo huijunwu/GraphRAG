@@ -1,0 +1,41 @@
+
+
+Traceback (most recent call last):
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 455, in get_xml_type
+    return self.xml_type[key]
+KeyError: <class 'NoneType'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pig/github/GraphRAG/main.py", line 86, in <module>
+    asyncio.run(digimon.insert(corpus))
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/pig/github/GraphRAG/Core/GraphRAG.py", line 232, in insert
+    await self.graph.build_graph(await self.doc_chunk.get_chunks(), self.config.graph.force)
+  File "/home/pig/github/GraphRAG/Core/Graph/BaseGraph.py", line 49, in build_graph
+    await self._persist_graph(force)
+  File "/home/pig/github/GraphRAG/Core/Graph/BaseGraph.py", line 286, in _persist_graph
+    await self._graph.persist(force)
+  File "/home/pig/github/GraphRAG/Core/Storage/NetworkXStorage.py", line 183, in persist
+    return await self._persist(force)
+  File "/home/pig/github/GraphRAG/Core/Storage/NetworkXStorage.py", line 110, in _persist
+    NetworkXStorage.write_nx_graph(self.graph, self.graphml_xml_file)
+  File "/home/pig/github/GraphRAG/Core/Storage/NetworkXStorage.py", line 48, in write_nx_graph
+    nx.write_graphml(graph, file_name)
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/utils/decorators.py", line 789, in func
+    return argmap._lazy_compile(__wrapper)(*args, **kwargs)
+  File "<class 'networkx.utils.decorators.argmap'> compilation 5", line 5, in argmap_write_graphml_lxml_1
+    import itertools
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 176, in write_graphml_lxml
+    writer = GraphMLWriterLxml(
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 746, in __init__
+    self.add_graph_element(graph)
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 787, in add_graph_element
+    T = self.get_xml_type(self.attr_type(k, "node", v))
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 457, in get_xml_type
+    raise TypeError(
+TypeError: GraphML does not support type <class 'NoneType'> as data values.

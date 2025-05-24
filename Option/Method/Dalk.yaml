@@ -8,7 +8,7 @@ enable_graph_augmentation: False
 
 # Data
 
-index_name: er_graph
+index_name: dalk_er_graph
 
 vdb_type: vector  # vector/colbert
 
