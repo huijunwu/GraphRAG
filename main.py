@@ -67,6 +67,7 @@ if __name__ == "__main__":
         parser.add_argument("-opt", type=str, help="Path to option YMAL file.")
         parser.add_argument("-dataset_name", type=str, help="Name of the dataset.")
         args = parser.parse_args()
+
         # configure the Phoenix tracer
         tracer_provider = register(
             project_name=f"{args.dataset_name}.{args.opt}",  # Default is 'default'
@@ -94,5 +95,6 @@ if __name__ == "__main__":
         # a = asyncio.run(digimon.query("Who is Fred Gehrke?"))
 
         # asyncio.run(digimon.query("Who is Scrooge?"))
+
     except Exception as e:
         logger.exception("main exception: {}", e)
