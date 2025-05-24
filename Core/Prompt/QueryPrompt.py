@@ -84,7 +84,7 @@ Do not include information where the supporting evidence for it is not provided.
 
 ---Analyst Reports---
 
-{report_data}
+{context_data}
 
 
 ---Goal---

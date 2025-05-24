@@ -1,0 +1,136 @@
+2025-05-24 13:44:10.258 | INFO     | Core.Community.LeidenCommunity:_clustering:62 - Each level has communities: {0: 4, 1: 5}
+2025-05-24 13:44:10.258 | INFO     | Core.Storage.JsonKVStorage:persist:29 - Write KV ./my_result/multihop-rag/ggraphrag_kg_graph/community_storage_community_node_map.json with 43 data
+2025-05-24 13:44:10.258 | INFO     | Core.Community.BaseCommunity:generate_community_report:26 - Generating community report...
+2025-05-24 13:44:10.258 | INFO     | Core.Community.LeidenCommunity:_load_community_report:255 - ☠️ Force to regenerate the community report.
+2025-05-24 13:44:10.258 | INFO     | Core.Storage.NetworkXStorage:_cluster_data_to_subgraphs:159 - Rewrite the graph with cluster data
+2025-05-24 13:44:10.258 | INFO     | Core.Storage.NetworkXStorage:_persist:109 - Writing graph into ./my_result/multihop-rag/ggraphrag_kg_graph/graph_storage_nx_data.graphml
+2025-05-24 13:44:10.258 | INFO     | Core.Storage.NetworkXStorage:write_nx_graph:45 - Writing graph with 81 nodes, 55 edges
+2025-05-24 13:44:10.261 | INFO     | Core.Community.LeidenCommunity:_generate_community_report:81 - Generating by levels: [1, 0]
+2025-05-24 13:45:08.491 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.324 | Max budget: $10.000 | Current cost: $0.017, prompt_tokens: 1983, completion_tokens: 938
+2025-05-24 13:45:14.017 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.342 | Max budget: $10.000 | Current cost: $0.018, prompt_tokens: 1916, completion_tokens: 1047
+2025-05-24 13:45:14.907 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.361 | Max budget: $10.000 | Current cost: $0.019, prompt_tokens: 1973, completion_tokens: 1070
+2025-05-24 13:45:22.281 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.383 | Max budget: $10.000 | Current cost: $0.023, prompt_tokens: 2602, completion_tokens: 1232
+2025-05-24 13:45:40.743 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.412 | Max budget: $10.000 | Current cost: $0.029, prompt_tokens: 3037, completion_tokens: 1668
+2025-05-24 13:46:48.045 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.433 | Max budget: $10.000 | Current cost: $0.020, prompt_tokens: 2191, completion_tokens: 1135
+2025-05-24 13:46:54.509 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.454 | Max budget: $10.000 | Current cost: $0.022, prompt_tokens: 2147, completion_tokens: 1266
+2025-05-24 13:46:55.414 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.479 | Max budget: $10.000 | Current cost: $0.025, prompt_tokens: 3225, completion_tokens: 1287
+2025-05-24 13:47:09.660 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.508 | Max budget: $10.000 | Current cost: $0.029, prompt_tokens: 3104, completion_tokens: 1621
+2025-05-24 13:47:09.662 | INFO     | Core.Storage.JsonKVStorage:persist:29 - Write KV ./my_result/multihop-rag/ggraphrag_kg_graph/community_storage_community_report.json with 9 data
+2025-05-24 13:47:09.662 | INFO     | Core.Community.BaseCommunity:generate_community_report:34 - ✅ [Community Report]  Finished
+2025-05-24 13:47:09.662 | INFO     | Core.GraphRAG:_update_costs_info:205 - Index Building stage cost: Total prompt token: 22178, Total completeion token: 11264, Total cost: 0.20170200000000005
+2025-05-24 13:47:09.662 | INFO     | Core.GraphRAG:_update_costs_info:207 - Index Building time(s): 179.79
+2025-05-24 13:47:09.662 | INFO     | Core.GraphRAG:_build_retriever_context:176 - Building retriever context for the current execution
+2025-05-24 13:47:09.664 | DEBUG    | Core.Retriever.CommunityRetriever:find_relevant_community_by_level:68 - find_relevant_community_by_level extra_fields=None query_type='basic' enable_local=False use_entity_similarity_for_ppr=True top_k_entity_for_ppr=8 node_specificity=True damping=0.1 top_k=5 k_nei=3 max_token_for_local_context=4800 max_token_for_global_context=4000 local_max_token_for_text_unit=4000 use_relations_vdb=False use_subgraphs_vdb=False global_max_consider_community=512 global_min_community_rating=0.0 level=2
+2025-05-24 13:47:09.664 | DEBUG    | Core.Retriever.CommunityRetriever:find_relevant_community_by_level:95 - find_relevant_community_by_level {'report_string': "# Amazon, Best Buy, and Target Gift Card Sales for Christmas\n\nTarget's focus on travel-related gift cards\n\n## Amazon, Best Buy, and Target as central retailers\n\nAmazon, Best Buy, and Target are the primary entities in this community, each offering gift cards for travel, gaming, and streaming services. Amazon and Best Buy are explicitly linked to PlayStation Plus, Nintendo Switch Online, and Pack 'n Go gift cards, while Target is associated with travel and Spotify gift cards. All three retailers are connected to the Christmas holiday as a deadline for last-minute gift purchases. Their prominence in the network suggests they play a critical role in holiday consumer behavior and gift card distribution.\n\n## PlayStation Plus and Disney Bundle as popular gift options\n\nPlayStation Plus and the Disney Bundle are recurring services linked to multiple retailers. PlayStation Plus subscriptions are sold at Amazon, Best Buy, and Target, while the Disney Bundle is available at Amazon and Best Buy. The Disney Bundle itself is composed of Disney Plus, ESPN Plus, and Hulu, indicating a bundled streaming service marketed as a gift. These services are explicitly tied to Christmas as a deadline for purchases, suggesting strong seasonal demand. Their prominence highlights the intersection of gaming and streaming services in holiday gift markets.\n\n## Christmas as a temporal anchor for gift purchases\n\nChristmas is a central entity in this community, serving as the deadline for purchasing gift cards and subscriptions. It is connected to Amazon, Best Buy, Target, PlayStation Plus, Nintendo Switch Online, and the Disney Bundle. This temporal context underscores the urgency of last-minute shopping and the role of gift cards as flexible solutions. The repeated emphasis on Christmas as a deadline reinforces its significance in driving consumer activity and retail strategy during the holiday season.\n\n## The Verge's role in promoting gift card retailers\n\nThe Verge is mentioned in multiple relationships as a media outlet that highlights Amazon, Best Buy, and Target gift cards as versatile holiday options. For example, it recommends Amazon gift cards for their broad usability and Best Buy gift cards for book purchases. This suggests that The Verge acts as a promotional channel for these retailers, potentially influencing consumer choices and reinforcing their market presence during the holiday season.\n\n## Disney Bundle's composition and market positioning\n\nThe Disney Bundle includes Disney Plus, ESPN Plus, and Hulu, forming a comprehensive streaming package. This bundling strategy is marketed as a gift option at Amazon and Best Buy, with Christmas as the deadline for purchases. The inclusion of diverse content platforms (entertainment, sports, and general TV/movies) positions the Disney Bundle as a versatile gift for a wide audience. Its association with major retailers and The Verge's promotion further highlights its appeal as a holiday product.\n\n## PlayStation Plus's cross-platform availability\n\nPlayStation Plus is explicitly linked to PlayStation 4, PlayStation 5, and the broader PlayStation brand, emphasizing its role as a subscription service for multiple gaming platforms. It is sold at Amazon, Best Buy, and Target, making it accessible to a broad audience. The service's association with Christmas as a purchase deadline underscores its popularity as a holiday gift, particularly for gamers. Its availability across consoles and retailers reinforces its position as a key offering in the gaming gift market.\n\n## Target's focus on travel-related gift cards\n\nTarget is uniquely associated with Pack 'n Go gift cards, which enable travel and vacation purchases. This differentiates Target from Amazon and Best Buy, which focus more on gaming and streaming services. The emphasis on travel-related gift cards at Target aligns with seasonal travel needs, particularly during the Christmas period. This specialization suggests Target's strategic positioning in the gift card market to cater to specific consumer demands.", 'report_json': {'title': 'Amazon, Best Buy, and Target Gift Card Sales for Christmas', 'summary': "The community centers around Amazon, Best Buy, and Target, which are major retailers offering gift cards for travel, gaming, and streaming services during the Christmas holiday. These retailers are connected to services like PlayStation Plus, Disney Bundle, and Pack 'n Go, with Christmas serving as the deadline for last-minute gift purchases. The Verge is highlighted as a media outlet promoting these gift cards as versatile holiday options.", 'rating': 4.0, 'rating_explanation': 'The impact severity rating is moderate due to the seasonal importance of gift card sales and their role in consumer spending, but no direct threats or compliance issues are identified.', 'findings': [{'summary': 'Amazon, Best Buy, and Target as central retailers', 'explanation': "Amazon, Best Buy, and Target are the primary entities in this community, each offering gift cards for travel, gaming, and streaming services. Amazon and Best Buy are explicitly linked to PlayStation Plus, Nintendo Switch Online, and Pack 'n Go gift cards, while Target is associated with travel and Spotify gift cards. All three retailers are connected to the Christmas holiday as a deadline for last-minute gift purchases. Their prominence in the network suggests they play a critical role in holiday consumer behavior and gift card distribution."}, {'summary': 'PlayStation Plus and Disney Bundle as popular gift options', 'explanation': 'PlayStation Plus and the Disney Bundle are recurring services linked to multiple retailers. PlayStation Plus subscriptions are sold at Amazon, Best Buy, and Target, while the Disney Bundle is available at Amazon and Best Buy. The Disney Bundle itself is composed of Disney Plus, ESPN Plus, and Hulu, indicating a bundled streaming service marketed as a gift. These services are explicitly tied to Christmas as a deadline for purchases, suggesting strong seasonal demand. Their prominence highlights the intersection of gaming and streaming services in holiday gift markets.'}, {'summary': 'Christmas as a temporal anchor for gift purchases', 'explanation': 'Christmas is a central entity in this community, serving as the deadline for purchasing gift cards and subscriptions. It is connected to Amazon, Best Buy, Target, PlayStation Plus, Nintendo Switch Online, and the Disney Bundle. This temporal context underscores the urgency of last-minute shopping and the role of gift cards as flexible solutions. The repeated emphasis on Christmas as a deadline reinforces its significance in driving consumer activity and retail strategy during the holiday season.'}, {'summary': "The Verge's role in promoting gift card retailers", 'explanation': 'The Verge is mentioned in multiple relationships as a media outlet that highlights Amazon, Best Buy, and Target gift cards as versatile holiday options. For example, it recommends Amazon gift cards for their broad usability and Best Buy gift cards for book purchases. This suggests that The Verge acts as a promotional channel for these retailers, potentially influencing consumer choices and reinforcing their market presence during the holiday season.'}, {'summary': "Disney Bundle's composition and market positioning", 'explanation': "The Disney Bundle includes Disney Plus, ESPN Plus, and Hulu, forming a comprehensive streaming package. This bundling strategy is marketed as a gift option at Amazon and Best Buy, with Christmas as the deadline for purchases. The inclusion of diverse content platforms (entertainment, sports, and general TV/movies) positions the Disney Bundle as a versatile gift for a wide audience. Its association with major retailers and The Verge's promotion further highlights its appeal as a holiday product."}, {'summary': "PlayStation Plus's cross-platform availability", 'explanation': "PlayStation Plus is explicitly linked to PlayStation 4, PlayStation 5, and the broader PlayStation brand, emphasizing its role as a subscription service for multiple gaming platforms. It is sold at Amazon, Best Buy, and Target, making it accessible to a broad audience. The service's association with Christmas as a purchase deadline underscores its popularity as a holiday gift, particularly for gamers. Its availability across consoles and retailers reinforces its position as a key offering in the gaming gift market."}, {'summary': "Target's focus on travel-related gift cards", 'explanation': "Target is uniquely associated with Pack 'n Go gift cards, which enable travel and vacation purchases. This differentiates Target from Amazon and Best Buy, which focus more on gaming and streaming services. The emphasis on travel-related gift cards at Target aligns with seasonal travel needs, particularly during the Christmas period. This specialization suggests Target's strategic positioning in the gift card market to cater to specific consumer demands."}]}, 'level': 0, 'title': 'Cluster 1', 'edges': [['playstation 5', 'playstation plus'], ['amazon', 'playstation plus'], ['amazon', 'nintendo switch online'], ['best buy', 'christmas'], ['christmas', 'playstation plus'], ['playstation 4', 'playstation plus'], ['christmas', 'nintendo switch online'], ['christmas', 'target'], ['best buy', 'the verge'], ['pack   go', 'target'], ['amazon', 'disney bundle'], ['amazon', 'pack   go'], ['best buy', 'playstation plus'], ['best buy', 'nintendo switch online'], ['disney bundle', 'hulu'], ['christmas', 'disney bundle'], ['amazon', 'christmas'], ['disney bundle', 'espn plus'], ['disney bundle', 'disney plus'], ['target', 'the verge'], ['playstation', 'playstation plus'], ['best buy', 'disney bundle'], ['amazon', 'the verge'], ['best buy', 'pack   go']], 'nodes': ['espn plus', 'best buy', 'playstation 5', 'playstation 4', 'hulu', 'playstation plus', 'target', 'christmas', 'playstation', 'disney bundle', 'disney plus', 'amazon'], 'chunk_ids': ['chunk-d6c9802c9a70f52746f96123f01156aa', 'chunk-b798fdf71a136d0db86c946e2033b5d8', 'chunk-8e5f329230ee7a86720839537f2cef10', 'chunk-210559aca27923e109d71a3f819b11c6'], 'occurrence': 1.0, 'sub_communities': ['6', '4', '5']}
+2025-05-24 13:47:09.664 | ERROR    | __main__:<module>:100 - main exception: 'community_info'
+Traceback (most recent call last):
+
+> File "/home/pig/github/GraphRAG/main.py", line 89, in <module>
+    save_path = wrapper_query(query_dataset, digimon, result_dir)
+                │             │              │        └ './my_result/multihop-rag/my_test/Results'
+                │             │              └ GraphRAG(private_context=None, private_config=Config(extra_fields=None, working_dir='./my_result/multihop-rag', exp_name='my_...
+                │             └ <Data.QueryDataset.RAGQueryDataset object at 0x7e8299afd270>
+                └ <function wrapper_query at 0x7e82b10b1bd0>
+
+  File "/home/pig/github/GraphRAG/main.py", line 42, in wrapper_query
+    res = asyncio.run(digimon.query(query["question"]))
+          │       │   │       │     └ {'id': 0, 'question': 'Did Polygon recommend Nintendo Switch games before The Verge suggested a GameStop gift card as a last-...
+          │       │   │       └ <function GraphRAG.query at 0x7e82b121d7e0>
+          │       │   └ GraphRAG(private_context=None, private_config=Config(extra_fields=None, working_dir='./my_result/multihop-rag', exp_name='my_...
+          │       └ <function run at 0x7e8414508040>
+          └ <module 'asyncio' from '/home/pig/miniconda3/envs/digimon/lib/python3.10/asyncio/__init__.py'>
+
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object GraphRAG.query at 0x7e8299ace960>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7e8414509a20>
+           └ <_UnixSelectorEventLoop running=False closed=True debug=False>
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished name='Task-518' coro=<GraphRAG.query() done, defined at /home/pig/github/GraphRAG/Core/GraphRAG.py:283> except...
+
+  File "/home/pig/github/GraphRAG/Core/GraphRAG.py", line 290, in query
+    response = await self._querier.query(query)
+                     │    │        │     └ 'Did Polygon recommend Nintendo Switch games before The Verge suggested a GameStop gift card as a last-minute gift option, wh...
+                     │    │        └ <function BaseQuery.query at 0x7e82b22d6ef0>
+                     │    └ <Core.Query.BasicQuery.BasicQuery object at 0x7e8278295e70>
+                     └ GraphRAG(private_context=None, private_config=Config(extra_fields=None, working_dir='./my_result/multihop-rag', exp_name='my_...
+
+  File "/home/pig/github/GraphRAG/Core/Query/BaseQuery.py", line 22, in query
+    context = await self._retrieve_relevant_contexts(query=query)
+                    │    │                                 └ 'Did Polygon recommend Nintendo Switch games before The Verge suggested a GameStop gift card as a last-minute gift option, wh...
+                    │    └ <function BasicQuery._retrieve_relevant_contexts at 0x7e82b22d7490>
+                    └ <Core.Query.BasicQuery.BasicQuery object at 0x7e8278295e70>
+
+  File "/home/pig/github/GraphRAG/Core/Query/BasicQuery.py", line 21, in _retrieve_relevant_contexts
+    return await self._retrieve_relevant_contexts_global(query)
+                 │    │                                  └ 'Did Polygon recommend Nintendo Switch games before The Verge suggested a GameStop gift card as a last-minute gift option, wh...
+                 │    └ <function BasicQuery._retrieve_relevant_contexts_global at 0x7e82b22d75b0>
+                 └ <Core.Query.BasicQuery.BasicQuery object at 0x7e8278295e70>
+
+  File "/home/pig/github/GraphRAG/Core/Query/BasicQuery.py", line 127, in _retrieve_relevant_contexts_global
+    community_datas = await self._retriever.retrieve_relevant_content(type=Retriever.COMMUNITY, mode="from_level")
+                            │    │          │                              │         └ <Retriever.COMMUNITY: 'community'>
+                            │    │          │                              └ <enum 'Retriever'>
+                            │    │          └ <function MixRetriever.retrieve_relevant_content at 0x7e82b22d69e0>
+                            │    └ <Core.Retriever.MixRetriever.MixRetriever object at 0x7e82782948b0>
+                            └ <Core.Query.BasicQuery.BasicQuery object at 0x7e8278295e70>
+
+  File "/home/pig/github/GraphRAG/Core/Retriever/MixRetriever.py", line 19, in retrieve_relevant_content
+    return await self.retrievers[type].retrieve_relevant_content(mode=mode, **kwargs)
+                 │    │          │                                    │       └ {}
+                 │    │          │                                    └ 'from_level'
+                 │    │          └ <Retriever.COMMUNITY: 'community'>
+                 │    └ {<Retriever.ENTITY: 'entity'>: <Core.Retriever.EntitiyRetriever.EntityRetriever object at 0x7e8288688610>, <Retriever.COMMUNI...
+                 └ <Core.Retriever.MixRetriever.MixRetriever object at 0x7e82782948b0>
+
+  File "/home/pig/github/GraphRAG/Core/Retriever/BaseRetriever.py", line 25, in retrieve_relevant_content
+    return await retrieve_fun(self, **kwargs)
+                 │            │       └ {}
+                 │            └ <Core.Retriever.CommunityRetriever.CommunityRetriever object at 0x7e82886882b0>
+                 └ <function CommunityRetriever.find_relevant_community_by_level at 0x7e82b22d6290>
+
+  File "/home/pig/github/GraphRAG/Core/Retriever/CommunityRetriever.py", line 96, in find_relevant_community_by_level
+    community_datas = sorted(
+
+  File "/home/pig/github/GraphRAG/Core/Retriever/CommunityRetriever.py", line 98, in <lambda>
+    key=lambda x: (x['community_info']['occurrence'], x["report_json"].get("rating", 0)),
+               │   │                                  └ {'report_string': "# Amazon, Best Buy, and Target Gift Card Sales for Christmas\n\nTarget's focus on travel-related gift card...
+               │   └ {'report_string': "# Amazon, Best Buy, and Target Gift Card Sales for Christmas\n\nTarget's focus on travel-related gift card...
+               └ {'report_string': "# Amazon, Best Buy, and Target Gift Card Sales for Christmas\n\nTarget's focus on travel-related gift card...
+
+KeyError: 'community_info'
+2025-05-24 14:01:50.960 | INFO     | Core.Community.LeidenCommunity:_clustering:62 - Each level has communities: {0: 4, 1: 5}
+2025-05-24 14:01:50.960 | INFO     | Core.Storage.JsonKVStorage:persist:29 - Write KV ./my_result/multihop-rag/lgraphrag_kg_graph/community_storage_community_node_map.json with 35 data
+2025-05-24 14:01:50.960 | INFO     | Core.Community.BaseCommunity:generate_community_report:26 - Generating community report...
+2025-05-24 14:01:50.960 | INFO     | Core.Community.LeidenCommunity:_load_community_report:255 - ☠️ Force to regenerate the community report.
+2025-05-24 14:01:50.960 | INFO     | Core.Storage.NetworkXStorage:_cluster_data_to_subgraphs:159 - Rewrite the graph with cluster data
+2025-05-24 14:01:50.960 | INFO     | Core.Storage.NetworkXStorage:_persist:109 - Writing graph into ./my_result/multihop-rag/lgraphrag_kg_graph/graph_storage_nx_data.graphml
+2025-05-24 14:01:50.960 | INFO     | Core.Storage.NetworkXStorage:write_nx_graph:45 - Writing graph with 64 nodes, 58 edges
+2025-05-24 14:01:50.962 | INFO     | Core.Community.LeidenCommunity:_generate_community_report:81 - Generating by levels: [1, 0]
+2025-05-24 14:02:57.587 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.337 | Max budget: $10.000 | Current cost: $0.020, prompt_tokens: 2426, completion_tokens: 1081
+2025-05-24 14:02:58.616 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.357 | Max budget: $10.000 | Current cost: $0.019, prompt_tokens: 2078, completion_tokens: 1103
+2025-05-24 14:02:59.038 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.376 | Max budget: $10.000 | Current cost: $0.019, prompt_tokens: 1810, completion_tokens: 1116
+2025-05-24 14:03:20.112 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.403 | Max budget: $10.000 | Current cost: $0.027, prompt_tokens: 2740, completion_tokens: 1581
+2025-05-24 14:03:26.783 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.431 | Max budget: $10.000 | Current cost: $0.028, prompt_tokens: 2377, completion_tokens: 1739
+2025-05-24 14:04:23.635 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.448 | Max budget: $10.000 | Current cost: $0.017, prompt_tokens: 1853, completion_tokens: 950
+2025-05-24 14:04:36.229 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.470 | Max budget: $10.000 | Current cost: $0.022, prompt_tokens: 2386, completion_tokens: 1219
+2025-05-24 14:04:41.370 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.495 | Max budget: $10.000 | Current cost: $0.025, prompt_tokens: 3069, completion_tokens: 1336
+2025-05-24 14:04:48.929 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.522 | Max budget: $10.000 | Current cost: $0.027, prompt_tokens: 3043, completion_tokens: 1513
+2025-05-24 14:04:48.930 | INFO     | Core.Storage.JsonKVStorage:persist:29 - Write KV ./my_result/multihop-rag/lgraphrag_kg_graph/community_storage_community_report.json with 9 data
+2025-05-24 14:04:48.930 | INFO     | Core.Community.BaseCommunity:generate_community_report:34 - ✅ [Community Report]  Finished
+2025-05-24 14:04:48.930 | INFO     | Core.GraphRAG:_update_costs_info:205 - Index Building stage cost: Total prompt token: 21782, Total completeion token: 11638, Total cost: 0.20500200000000002
+2025-05-24 14:04:48.930 | INFO     | Core.GraphRAG:_update_costs_info:207 - Index Building time(s): 178.29
+2025-05-24 14:04:48.930 | INFO     | Core.GraphRAG:_build_retriever_context:176 - Building retriever context for the current execution
+2025-05-24 14:04:49.006 | INFO     | Core.Query.BasicQuery:_retrieve_relevant_contexts_local:75 - Using 5 entities, 15 relations, 3 text units
+2025-05-24 14:05:44.282 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.548 | Max budget: $10.000 | Current cost: $0.026, prompt_tokens: 4822, completion_tokens: 969
+2025-05-24 14:05:44.300 | INFO     | Core.Utils.Evaluation:evaluate:184 - Loaded 1 records from ./my_result/multihop-rag/my_test/Results/results.json
+2025-05-24 14:05:44.300 | INFO     | Core.Utils.Evaluation:evaluate:185 - Evaluating short-form mode.
+2025-05-24 14:05:44.300 | INFO     | Core.Utils.Evaluation:print_eval_matrics:212 - In this evaluation, the following metrics are used:
+2025-05-24 14:05:44.300 | INFO     | Core.Utils.Evaluation:print_eval_matrics:213 - accuracy, f1, precision, recall, em
+2025-05-24 14:05:44.301 | INFO     | Core.Utils.Evaluation:short_eval:276 - accuracy: 0.0000
+2025-05-24 14:05:44.301 | INFO     | Core.Utils.Evaluation:short_eval:277 - Precision: 0.0000
+2025-05-24 14:05:44.301 | INFO     | Core.Utils.Evaluation:short_eval:278 - Recall: 0.0000
+2025-05-24 14:05:44.302 | INFO     | Core.Utils.Evaluation:short_eval:279 - F1: 0.0000
+2025-05-24 14:05:44.302 | INFO     | Core.Utils.Evaluation:short_eval:280 - EM: 0.0000

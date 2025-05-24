@@ -188,7 +188,7 @@ class GraphRAG(ContextMixin, BaseModel):
             raise
 
 
-    async def build_e2r_r2c_maps(self, force = False):
+    async def build_e2r_r2c_maps(self, force = True):
         # await self._build_ppr_context()
         logger.info("Starting build two maps: 1️⃣ entity <-> relationship; 2️⃣ relationship <-> chunks ")
         if not await self.entities_to_relationships.load(force):
@@ -258,22 +258,22 @@ class GraphRAG(ContextMixin, BaseModel):
             if not edge_metadata:
                 logger.warning("No edge metadata found. Skipping relation indexing.")
                 return
-            await self.relations_vdb.build_index(await self.graph.edges_data(), edge_metadata, force=False)
+            await self.relations_vdb.build_index(await self.graph.edges_data(), edge_metadata, force=True)
 
         if self.config.use_subgraphs_vdb:
             subgraph_metadata = await self.graph.subgraph_metadata()
             if not subgraph_metadata:
                 logger.warning("No node metadata found. Skipping subgraph indexing.")
 
-            await self.subgraphs_vdb.build_index(await self.graph.subgraphs_data(), subgraph_metadata, force=False)
+            await self.subgraphs_vdb.build_index(await self.graph.subgraphs_data(), subgraph_metadata, force=True)
 
         if self.config.graph.use_community:
 
             await self.community.cluster(largest_cc=await self.graph.stable_largest_cc(),
                                          max_cluster_size=self.config.graph.max_graph_cluster_size,
-                                         random_seed=self.config.graph.graph_cluster_seed, force = False)
+                                         random_seed=self.config.graph.graph_cluster_seed, force = True)
 
-            await self.community.generate_community_report(self.graph, False)
+            await self.community.generate_community_report(self.graph, True)
         self._update_costs_info("Index Building")
 
         await self._build_retriever_context()

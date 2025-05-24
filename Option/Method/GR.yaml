@@ -7,7 +7,7 @@ use_entity_link_chunk: False  # Only set True for HippoRAG and FastGraphRAG
 enable_graph_augmentation: False
 
 # Data
-index_name: er_graph
+index_name: gr_er_graph
 vdb_type: vector  # vector/colbert
 
 # Chunk Config

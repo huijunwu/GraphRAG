@@ -188,7 +188,7 @@ class GRQuery(BaseQuery):
         await self.initialization()
 
         query, context = await self._retrieve_relevant_contexts(query)
-        print(context)
+        logger.info(context)
         response = await self.generation_qa(query, context)
 
         return response

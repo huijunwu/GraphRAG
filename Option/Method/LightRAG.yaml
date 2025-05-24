@@ -9,7 +9,7 @@ enable_graph_augmentation: False
 
 # Data
 
-index_name: rkg_graph
+index_name: lightrag_rkg_graph
 
 vdb_type: vector  # vector/colbert
 

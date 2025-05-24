@@ -8,7 +8,7 @@ enable_graph_augmentation: False
 
 # Data
 
-index_name: kg_graph
+index_name: lgraphrag_kg_graph
 
 vdb_type: vector  # vector/colbert
 # Chunk Config 
@@ -69,6 +69,7 @@ query:
     # naive search
     naive_max_token_for_text_unit: 12000
     # local search
+    enable_local: True
     local_max_token_for_text_unit: 4000  # 12000 * 0.33
     max_token_for_text_unit: 4000
     

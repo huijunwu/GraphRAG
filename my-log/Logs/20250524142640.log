@@ -1,0 +1,71 @@
+2025-05-24 14:26:45.643 | INFO     | Core.Chunk.DocChunk:build_chunks:27 - Starting chunk the given documents
+2025-05-24 14:26:45.646 | INFO     | Core.Storage.ChunkKVStorage:_persist:105 - Writing data into ./my_result/multihop-rag/tog_er_graph/chunk_storage_chunk_data_idx.pkl and ./my_result/multihop-rag/tog_er_graph/chunk_storage_chunk_data_key.pkl
+2025-05-24 14:26:45.646 | INFO     | Core.Chunk.DocChunk:build_chunks:74 - ✅ Finished the chunking stage
+2025-05-24 14:26:45.647 | INFO     | Core.GraphRAG:_update_costs_info:205 - Chunking stage cost: Total prompt token: 0, Total completeion token: 0, Total cost: 0
+2025-05-24 14:26:45.647 | INFO     | Core.GraphRAG:_update_costs_info:207 - Chunking time(s): 0.00
+2025-05-24 14:26:45.647 | INFO     | Core.Graph.BaseGraph:build_graph:41 - Starting build graph for the given documents
+2025-05-24 14:26:45.647 | INFO     | Core.Storage.NetworkXStorage:load_graph:97 - Force rebuilding the graph
+2025-05-24 14:27:48.166 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.012 | Max budget: $10.000 | Current cost: $0.012, prompt_tokens: 249, completion_tokens: 930
+2025-05-24 14:27:52.347 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.028 | Max budget: $10.000 | Current cost: $0.016, prompt_tokens: 1433, completion_tokens: 987
+2025-05-24 14:27:57.872 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.045 | Max budget: $10.000 | Current cost: $0.017, prompt_tokens: 1442, completion_tokens: 1044
+2025-05-24 14:28:36.634 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.069 | Max budget: $10.000 | Current cost: $0.024, prompt_tokens: 1385, completion_tokens: 1640
+2025-05-24 14:28:44.950 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.094 | Max budget: $10.000 | Current cost: $0.025, prompt_tokens: 1423, completion_tokens: 1743
+2025-05-24 14:29:30.239 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.116 | Max budget: $10.000 | Current cost: $0.022, prompt_tokens: 1792, completion_tokens: 1387
+2025-05-24 14:29:46.244 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.142 | Max budget: $10.000 | Current cost: $0.026, prompt_tokens: 1864, completion_tokens: 1702
+2025-05-24 14:29:56.723 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.161 | Max budget: $10.000 | Current cost: $0.019, prompt_tokens: 1872, completion_tokens: 1123
+2025-05-24 14:30:18.223 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.190 | Max budget: $10.000 | Current cost: $0.029, prompt_tokens: 548, completion_tokens: 2304
+2025-05-24 14:30:19.011 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.215 | Max budget: $10.000 | Current cost: $0.025, prompt_tokens: 1790, completion_tokens: 1607
+2025-05-24 14:30:19.016 | INFO     | Core.Graph.ERGraph:_build_graph:92 - Constructing graph finished
+2025-05-24 14:30:19.016 | INFO     | Core.Storage.NetworkXStorage:_persist:109 - Writing graph into ./my_result/multihop-rag/tog_er_graph/graph_storage_nx_data.graphml
+2025-05-24 14:30:19.016 | INFO     | Core.Storage.NetworkXStorage:write_nx_graph:45 - Writing graph with 170 nodes, 151 edges
+2025-05-24 14:30:19.023 | INFO     | Core.Graph.BaseGraph:build_graph:50 - ✅ Finished the graph building stage
+2025-05-24 14:30:19.023 | INFO     | Core.GraphRAG:_update_costs_info:205 - Build Graph stage cost: Total prompt token: 13798, Total completeion token: 14467, Total cost: 0.214998
+2025-05-24 14:30:19.023 | INFO     | Core.GraphRAG:_update_costs_info:207 - Build Graph time(s): 213.38
+2025-05-24 14:30:19.024 | INFO     | Core.Index.BaseIndex:build_index:13 - Starting insert elements of the given graph into vector database
+2025-05-24 14:30:19.025 | INFO     | Core.Common.Utils:clean_storage:372 - The path ./my_result/multihop-rag/tog_er_graph/entities_vdb does not exist.
+2025-05-24 14:30:19.025 | INFO     | Core.Index.BaseIndex:build_index:25 - Building index for input elements
+2025-05-24 14:30:19.898 | INFO     | Core.Index.VectorIndex:_update_index:65 - refresh index size is 170
+2025-05-24 14:30:20.172 | INFO     | Core.Index.BaseIndex:build_index:28 - Index successfully built and stored.
+2025-05-24 14:30:20.172 | INFO     | Core.Index.BaseIndex:build_index:29 - ✅ Finished starting insert entities of the given graph into vector database
+2025-05-24 14:30:20.173 | INFO     | Core.Index.BaseIndex:build_index:13 - Starting insert elements of the given graph into vector database
+2025-05-24 14:30:20.173 | INFO     | Core.Common.Utils:clean_storage:372 - The path ./my_result/multihop-rag/tog_er_graph/relations_vdb does not exist.
+2025-05-24 14:30:20.173 | INFO     | Core.Index.BaseIndex:build_index:25 - Building index for input elements
+2025-05-24 14:30:20.911 | INFO     | Core.Index.VectorIndex:_update_index:65 - refresh index size is 151
+2025-05-24 14:30:21.139 | INFO     | Core.Index.BaseIndex:build_index:28 - Index successfully built and stored.
+2025-05-24 14:30:21.139 | INFO     | Core.Index.BaseIndex:build_index:29 - ✅ Finished starting insert entities of the given graph into vector database
+2025-05-24 14:30:21.139 | INFO     | Core.GraphRAG:_update_costs_info:205 - Index Building stage cost: Total prompt token: 0, Total completeion token: 0, Total cost: 0.0
+2025-05-24 14:30:21.139 | INFO     | Core.GraphRAG:_update_costs_info:207 - Index Building time(s): 2.12
+2025-05-24 14:30:21.139 | INFO     | Core.GraphRAG:_build_retriever_context:176 - Building retriever context for the current execution
+2025-05-24 14:30:40.221 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.219 | Max budget: $10.000 | Current cost: $0.004, prompt_tokens: 229, completion_tokens: 308
+2025-05-24 14:31:05.947 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.226 | Max budget: $10.000 | Current cost: $0.007, prompt_tokens: 493, completion_tokens: 445
+2025-05-24 14:31:28.463 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.232 | Max budget: $10.000 | Current cost: $0.006, prompt_tokens: 493, completion_tokens: 388
+2025-05-24 14:31:28.463 | INFO     | Core.Retriever.RelationshipRetriever:_find_relevant_relations_by_entity_agent:165 - No relations found by entity: nintendo switch and query: Did Polygon recommend Nintendo Switch games before The Verge suggested a GameStop gift card as a last-minute gift option, which could be used to purchase such games?
+2025-05-24 14:31:59.015 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.240 | Max budget: $10.000 | Current cost: $0.008, prompt_tokens: 500, completion_tokens: 528
+2025-05-24 14:32:13.086 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.245 | Max budget: $10.000 | Current cost: $0.004, prompt_tokens: 492, completion_tokens: 239
+2025-05-24 14:32:13.087 | INFO     | Core.Retriever.RelationshipRetriever:_find_relevant_relations_by_entity_agent:165 - No relations found by entity: gamestop and query: Did Polygon recommend Nintendo Switch games before The Verge suggested a GameStop gift card as a last-minute gift option, which could be used to purchase such games?
+2025-05-24 14:32:51.523 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.253 | Max budget: $10.000 | Current cost: $0.009, prompt_tokens: 264, completion_tokens: 669
+2025-05-24 14:32:51.523 | INFO     | Core.Retriever.EntitiyRetriever:_find_relevant_entities_by_relationships_agent:155 - All entities are created with equal scores.
+2025-05-24 14:33:15.388 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.261 | Max budget: $10.000 | Current cost: $0.007, prompt_tokens: 841, completion_tokens: 399
+2025-05-24 14:33:15.389 | INFO     | Core.Query.ToGQuery:query:124 - ToG still not find the answer at depth 1.
+2025-05-24 14:33:40.605 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.267 | Max budget: $10.000 | Current cost: $0.007, prompt_tokens: 496, completion_tokens: 431
+2025-05-24 14:34:30.708 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.279 | Max budget: $10.000 | Current cost: $0.012, prompt_tokens: 504, completion_tokens: 861
+2025-05-24 14:34:42.416 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.283 | Max budget: $10.000 | Current cost: $0.004, prompt_tokens: 504, completion_tokens: 194
+2025-05-24 14:35:29.094 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.293 | Max budget: $10.000 | Current cost: $0.010, prompt_tokens: 266, completion_tokens: 803
+2025-05-24 14:36:06.803 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.304 | Max budget: $10.000 | Current cost: $0.010, prompt_tokens: 894, completion_tokens: 625
+2025-05-24 14:36:06.803 | INFO     | Core.Query.ToGQuery:query:124 - ToG still not find the answer at depth 2.
+2025-05-24 14:36:52.211 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.314 | Max budget: $10.000 | Current cost: $0.011, prompt_tokens: 500, completion_tokens: 753
+2025-05-24 14:37:16.678 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.321 | Max budget: $10.000 | Current cost: $0.006, prompt_tokens: 504, completion_tokens: 404
+2025-05-24 14:37:41.588 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.327 | Max budget: $10.000 | Current cost: $0.006, prompt_tokens: 500, completion_tokens: 411
+2025-05-24 14:39:32.656 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.350 | Max budget: $10.000 | Current cost: $0.023, prompt_tokens: 266, completion_tokens: 1845
+2025-05-24 14:39:32.656 | INFO     | Core.Retriever.EntitiyRetriever:_find_relevant_entities_by_relationships_agent:155 - All entities are created with equal scores.
+2025-05-24 14:39:57.989 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.357 | Max budget: $10.000 | Current cost: $0.008, prompt_tokens: 935, completion_tokens: 400
+2025-05-24 14:39:57.989 | INFO     | Core.Query.ToGQuery:query:124 - ToG still not find the answer at depth 3.
+2025-05-24 14:39:58.005 | INFO     | Core.Utils.Evaluation:evaluate:184 - Loaded 1 records from ./my_result/multihop-rag/my_test/Results/results.json
+2025-05-24 14:39:58.005 | INFO     | Core.Utils.Evaluation:evaluate:185 - Evaluating short-form mode.
+2025-05-24 14:39:58.005 | INFO     | Core.Utils.Evaluation:print_eval_matrics:212 - In this evaluation, the following metrics are used:
+2025-05-24 14:39:58.005 | INFO     | Core.Utils.Evaluation:print_eval_matrics:213 - accuracy, f1, precision, recall, em
+2025-05-24 14:39:58.005 | INFO     | Core.Utils.Evaluation:short_eval:276 - accuracy: 0.0000
+2025-05-24 14:39:58.005 | INFO     | Core.Utils.Evaluation:short_eval:277 - Precision: 0.0000
+2025-05-24 14:39:58.006 | INFO     | Core.Utils.Evaluation:short_eval:278 - Recall: 0.0000
+2025-05-24 14:39:58.006 | INFO     | Core.Utils.Evaluation:short_eval:279 - F1: 0.0000
+2025-05-24 14:39:58.006 | INFO     | Core.Utils.Evaluation:short_eval:280 - EM: 0.0000

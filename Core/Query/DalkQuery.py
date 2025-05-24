@@ -23,7 +23,8 @@ class DalkQuery(BaseQuery):
         # import pdb
         # pdb.set_trace()
         if nei_list is None: return ""
-        nei_str_list = ["->".join([e["src_id"], e["content"], e["tgt_id"]])
+        logger.debug("nei_list[0] {}", nei_list[0])
+        nei_str_list = ["->".join([e["src_id"], e["relation_name"], e["tgt_id"]])
                         for e in nei_list]
         if len(nei_str_list) > 5:
             nei_str_list = nei_str_list[:-5]

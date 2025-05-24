@@ -362,16 +362,16 @@ def clean_storage(path):
         if os.path.exists(path):
             if os.path.isfile(path):
                 os.remove(path)
-                print(f"File {path} has been deleted.")
+                logger.info(f"File {path} has been deleted.")
             elif os.path.isdir(path):
                 shutil.rmtree(path)
-                print(f"Directory {path} and its contents have been deleted.")
+                logger.info(f"Directory {path} and its contents have been deleted.")
             else:
-                print(f"The path {path} exists but is not a file or directory.")
+                logger.info(f"The path {path} exists but is not a file or directory.")
         else:
-            print(f"The path {path} does not exist.")
+            logger.info(f"The path {path} does not exist.")
     except Exception as e:
-        print(f"An error occurred while deleting {path}: {e}")
+        logger.warning(f"An error occurred while deleting {path}: {e}")
 
 
 def csv_string_to_list(csv_string: str) -> List[List[str]]:

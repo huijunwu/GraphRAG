@@ -15,7 +15,7 @@ from rouge_score import rouge_scorer, scoring
 from Option.Config2 import default_config
 from Core.Provider.BaseLLM import BaseLLM
 from Core.Provider.LLMProviderRegister import create_llm_instance
-
+from Core.Common.Logger import logger
 
 nltk_path = "YOUR_OWN_NLTK_CACHE_PATH"
 # add the nltk_path to the nltk.data.path
@@ -24,7 +24,7 @@ nltk.data.path.append(nltk_path)
 try:
     nltk.data.find("tokenizers/punkt")
 except LookupError:
-    print("Downloading punkt")
+    logger.info("Downloading punkt")
     nltk.download("punkt", download_dir=nltk_path)
     nltk.download("wordnet", download_dir=nltk_path)
 
@@ -181,8 +181,8 @@ class Evaluator:
 
     async def evaluate(self):
         df = pd.read_json(self.path, lines=True)
-        print(f"Loaded {len(df)} records from {self.path}")
-        print(f"Evaluating {self.mode} mode.")
+        logger.info(f"Loaded {len(df)} records from {self.path}")
+        logger.info(f"Evaluating {self.mode} mode.")
 
         if self.mode == "short-form":
             self.print_eval_matrics(self.short_eval_metrics)
@@ -209,10 +209,11 @@ class Evaluator:
         return res_dict
 
     def print_eval_matrics(self, eval_matrics):
-        print("In this evaluation, the following metrics are used:")
-        for metric in eval_matrics:
-            print(metric, end=" ")
-        print("\n")
+        logger.info("In this evaluation, the following metrics are used:")
+        logger.info(', '.join(eval_matrics))
+        # for metric in eval_matrics:
+        #     print(metric, end=" ")
+        # print("\n")
 
     def get_label_pred_list(self, df, pred_col, label_col):
         label_list = df[label_col].tolist()
@@ -272,11 +273,11 @@ class Evaluator:
             "em": em,
         }
 
-        print(f"accuracy: {accuracy:.4f}")
-        print(f"Precision: {pre:.4f}")
-        print(f"Recall: {recall:.4f}")
-        print(f"F1: {f1:.4f}")
-        print(f"EM: {em:.4f}")
+        logger.info(f"accuracy: {accuracy:.4f}")
+        logger.info(f"Precision: {pre:.4f}")
+        logger.info(f"Recall: {recall:.4f}")
+        logger.info(f"F1: {f1:.4f}")
+        logger.info(f"EM: {em:.4f}")
 
         return res_dict, df
 
@@ -338,16 +339,16 @@ class Evaluator:
         df["rouge_l_precision"] = rouge_l_precision_list
         df["rouge_l_recall"] = rouge_l_recall_list
 
-        print(f"Bleu-1: {bleu_1:.4f}")
-        print(f"Bleu-4: {bleu_4:.4f}")
-        print(f"Modify Bleu-4: {modify_bleu_4:.4f}")
-        print(f"Bleu-1 Smooth: {bleu_1_smooth:.4f}")
-        print(f"Bleu-4 Smooth: {bleu_4_smooth:.4f}")
-        print(f"Modify Bleu-4 Smooth: {modify_bleu_4_smooth:.4f}")
-        print(f"Meteor: {meteor:.4f}")
-        print(f"Rouge-l F1: {rouge_l_f1:.4f}")
-        print(f"Rouge-l Precision: {rouge_l_precision:.4f}")
-        print(f"Rouge-l Recall: {rouge_l_recall:.4f}")
+        logger.info(f"Bleu-1: {bleu_1:.4f}")
+        logger.info(f"Bleu-4: {bleu_4:.4f}")
+        logger.info(f"Modify Bleu-4: {modify_bleu_4:.4f}")
+        logger.info(f"Bleu-1 Smooth: {bleu_1_smooth:.4f}")
+        logger.info(f"Bleu-4 Smooth: {bleu_4_smooth:.4f}")
+        logger.info(f"Modify Bleu-4 Smooth: {modify_bleu_4_smooth:.4f}")
+        logger.info(f"Meteor: {meteor:.4f}")
+        logger.info(f"Rouge-l F1: {rouge_l_f1:.4f}")
+        logger.info(f"Rouge-l Precision: {rouge_l_precision:.4f}")
+        logger.info(f"Rouge-l Recall: {rouge_l_recall:.4f}")
 
         res_dict = {
             "bleu_1": bleu_1,
@@ -404,10 +405,10 @@ class Evaluator:
             "rougeLsum": rougeLsum,
         }
 
-        print(f"str_em: {str_em:.4f}")
-        print(f"str_hit: {str_hit:.4f}")
-        print(f"mauve: {mauve:.4f}")
-        print(f"rougeLsum: {rougeLsum:.4f}")
+        logger.info(f"str_em: {str_em:.4f}")
+        logger.info(f"str_hit: {str_hit:.4f}")
+        logger.info(f"mauve: {mauve:.4f}")
+        logger.info(f"rougeLsum: {rougeLsum:.4f}")
 
         return res_dict, df
 
@@ -426,7 +427,7 @@ class Evaluator:
                 df.loc[index, "extract_output"] = response["predict"]
             except Exception as e:
                 df.loc[index, "extract_output"] = "-1"
-        print("LLM extract option completed.")
+        logger.info("LLM extract option completed.")
 
         accuracy_list = []
         label_list, pred_list = self.get_label_pred_list(
@@ -442,7 +443,7 @@ class Evaluator:
         accuracy = sum(accuracy_list) * 100 / len(accuracy_list)
         df["accuracy"] = accuracy_list
         res_dict = {"accuracy": accuracy}
-        print(f"accuracy: {accuracy:.4f}")
+        logger.info(f"accuracy: {accuracy:.4f}")
         return res_dict, df
 
     def exact_presence(self, short_answers, context):

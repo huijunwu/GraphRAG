@@ -59,7 +59,7 @@ class MedQuery(BaseQuery):
 
     async def query(self, query):
         context = await self._retrieve_relevant_contexts(query)
-        print(context)
+        logger.info(context)
         response = await self.generation_qa(query, context)
         return response
 

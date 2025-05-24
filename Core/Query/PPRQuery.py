@@ -32,7 +32,7 @@ class PPRQuery(BaseQuery):
                                                    system_msgs=[QueryPrompt.IRCOT_REASON_INSTRUCTION])
 
         except Exception as e:
-            print(e)
+            logger.exception(e)
             return ''
         return response_content
 
@@ -115,7 +115,7 @@ class PPRQuery(BaseQuery):
             try:
                 response = await self.llm.aask(msg=user_prompt, system_msgs=[system_msgs])
             except Exception as e:
-                print('QA read exception', e)
+                logger.exception('QA read exception', e)
                 return ''
         return response
     

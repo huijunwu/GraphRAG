@@ -8,7 +8,7 @@ enable_graph_augmentation: False
 
 # Data
 
-index_name: kg_graph
+index_name: ggraphrag_kg_graph
 
 vdb_type: vector  # vector/colbert
 # Chunk Config 

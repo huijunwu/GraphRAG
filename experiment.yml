@@ -105,6 +105,7 @@ dependencies:
       - llama-parse==0.6.4.post1
       - llvmlite==0.44.0
       - loguru==0.7.3
+      - lxml==5.4.0
       - markupsafe==2.1.5
       - marshmallow==3.26.1
       - matplotlib==3.10.1

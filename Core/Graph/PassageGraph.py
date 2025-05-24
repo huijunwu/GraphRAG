@@ -112,7 +112,7 @@ class PassageGraph(BaseGraph):
                     # 每 save_interval 轮保存一次结果
                     if (i + 1) % save_interval == 0:
                         self._save_results(results, save_path)
-                        print(f"Saved results at round {i + 1}")
+                        logger.debug(f"Saved results at round {i + 1}")
 
             # # 保存剩余的结果
             # if results:

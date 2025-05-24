@@ -119,7 +119,7 @@ class ChunkKVStorage(BaseKVStorage):
         return list(self._chunk.items())
     
     async def size(self):
-        print(len(self._data))
-        print(len(self._chunk))
+        logger.info(len(self._data))
+        logger.info(len(self._chunk))
         assert len(self._data) == len(self._chunk)
         return len(self._data)

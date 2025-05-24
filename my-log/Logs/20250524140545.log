@@ -1,0 +1,54 @@
+2025-05-24 14:05:50.648 | INFO     | Core.Chunk.DocChunk:build_chunks:27 - Starting chunk the given documents
+2025-05-24 14:05:50.651 | INFO     | Core.Storage.ChunkKVStorage:_persist:105 - Writing data into ./my_result/multihop-rag/lightrag_rkg_graph/chunk_storage_chunk_data_idx.pkl and ./my_result/multihop-rag/lightrag_rkg_graph/chunk_storage_chunk_data_key.pkl
+2025-05-24 14:05:50.651 | INFO     | Core.Chunk.DocChunk:build_chunks:74 - ✅ Finished the chunking stage
+2025-05-24 14:05:50.651 | INFO     | Core.GraphRAG:_update_costs_info:205 - Chunking stage cost: Total prompt token: 0, Total completeion token: 0, Total cost: 0
+2025-05-24 14:05:50.651 | INFO     | Core.GraphRAG:_update_costs_info:207 - Chunking time(s): 0.00
+2025-05-24 14:05:50.651 | INFO     | Core.Graph.BaseGraph:build_graph:41 - Starting build graph for the given documents
+2025-05-24 14:05:50.651 | INFO     | Core.Storage.NetworkXStorage:load_graph:97 - Force rebuilding the graph
+2025-05-24 14:06:47.621 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.016 | Max budget: $10.000 | Current cost: $0.016, prompt_tokens: 2236, completion_tokens: 778
+2025-05-24 14:07:38.407 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.034 | Max budget: $10.000 | Current cost: $0.018, prompt_tokens: 2431, completion_tokens: 909
+2025-05-24 14:07:46.289 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.066 | Max budget: $10.000 | Current cost: $0.032, prompt_tokens: 3372, completion_tokens: 1844
+2025-05-24 14:08:31.048 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.108 | Max budget: $10.000 | Current cost: $0.041, prompt_tokens: 3419, completion_tokens: 2583
+2025-05-24 14:09:41.889 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.138 | Max budget: $10.000 | Current cost: $0.031, prompt_tokens: 5464, completion_tokens: 1185
+2025-05-24 14:09:44.704 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.195 | Max budget: $10.000 | Current cost: $0.056, prompt_tokens: 3429, completion_tokens: 3828
+2025-05-24 14:10:41.848 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.263 | Max budget: $10.000 | Current cost: $0.068, prompt_tokens: 3410, completion_tokens: 4832
+2025-05-24 14:11:35.726 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.301 | Max budget: $10.000 | Current cost: $0.038, prompt_tokens: 4895, completion_tokens: 1923
+2025-05-24 14:12:21.059 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.339 | Max budget: $10.000 | Current cost: $0.038, prompt_tokens: 5407, completion_tokens: 1848
+2025-05-24 14:19:12.142 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.371 | Max budget: $10.000 | Current cost: $0.033, prompt_tokens: 4670, completion_tokens: 1541
+2025-05-24 14:19:12.150 | INFO     | Core.Graph.RKGraph:_build_graph:66 - Constructing graph finished
+2025-05-24 14:19:12.150 | INFO     | Core.Storage.NetworkXStorage:_persist:109 - Writing graph into ./my_result/multihop-rag/lightrag_rkg_graph/graph_storage_nx_data.graphml
+2025-05-24 14:19:12.150 | INFO     | Core.Storage.NetworkXStorage:write_nx_graph:45 - Writing graph with 73 nodes, 76 edges
+2025-05-24 14:19:12.159 | INFO     | Core.Graph.BaseGraph:build_graph:50 - ✅ Finished the graph building stage
+2025-05-24 14:19:12.159 | INFO     | Core.GraphRAG:_update_costs_info:205 - Build Graph stage cost: Total prompt token: 38733, Total completeion token: 21271, Total cost: 0.371451
+2025-05-24 14:19:12.159 | INFO     | Core.GraphRAG:_update_costs_info:207 - Build Graph time(s): 801.51
+2025-05-24 14:19:12.159 | INFO     | Core.Index.BaseIndex:build_index:13 - Starting insert elements of the given graph into vector database
+2025-05-24 14:19:12.161 | INFO     | Core.Common.Utils:clean_storage:372 - The path ./my_result/multihop-rag/lightrag_rkg_graph/entities_vdb does not exist.
+2025-05-24 14:19:12.161 | INFO     | Core.Index.BaseIndex:build_index:25 - Building index for input elements
+2025-05-24 14:19:12.695 | INFO     | Core.Index.VectorIndex:_update_index:65 - refresh index size is 73
+2025-05-24 14:19:12.808 | INFO     | Core.Index.BaseIndex:build_index:28 - Index successfully built and stored.
+2025-05-24 14:19:12.808 | INFO     | Core.Index.BaseIndex:build_index:29 - ✅ Finished starting insert entities of the given graph into vector database
+2025-05-24 14:19:12.809 | INFO     | Core.Index.BaseIndex:build_index:13 - Starting insert elements of the given graph into vector database
+2025-05-24 14:19:12.809 | INFO     | Core.Common.Utils:clean_storage:372 - The path ./my_result/multihop-rag/lightrag_rkg_graph/relations_vdb does not exist.
+2025-05-24 14:19:12.809 | INFO     | Core.Index.BaseIndex:build_index:25 - Building index for input elements
+2025-05-24 14:19:13.339 | INFO     | Core.Index.VectorIndex:_update_index:65 - refresh index size is 76
+2025-05-24 14:19:13.457 | INFO     | Core.Index.BaseIndex:build_index:28 - Index successfully built and stored.
+2025-05-24 14:19:13.457 | INFO     | Core.Index.BaseIndex:build_index:29 - ✅ Finished starting insert entities of the given graph into vector database
+2025-05-24 14:19:13.457 | INFO     | Core.GraphRAG:_update_costs_info:205 - Index Building stage cost: Total prompt token: 0, Total completeion token: 0, Total cost: 0.0
+2025-05-24 14:19:13.457 | INFO     | Core.GraphRAG:_update_costs_info:207 - Index Building time(s): 1.30
+2025-05-24 14:19:13.457 | INFO     | Core.GraphRAG:_build_retriever_context:176 - Building retriever context for the current execution
+2025-05-24 14:19:35.340 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.378 | Max budget: $10.000 | Current cost: $0.006, prompt_tokens: 398, completion_tokens: 411
+2025-05-24 14:19:35.424 | INFO     | Core.Query.BasicQuery:_retrieve_relevant_contexts_global_keywords:172 - Global query uses 1 entities, 5 relations, 2 text units
+2025-05-24 14:19:50.821 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.382 | Max budget: $10.000 | Current cost: $0.005, prompt_tokens: 398, completion_tokens: 297
+2025-05-24 14:19:50.911 | INFO     | Core.Query.BasicQuery:_retrieve_relevant_contexts_local:75 - Using 5 entities, 22 relations, 2 text units
+2025-05-24 14:20:10.039 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.388 | Max budget: $10.000 | Current cost: $0.006, prompt_tokens: 398, completion_tokens: 369
+2025-05-24 14:20:10.089 | INFO     | Core.Query.BasicQuery:_retrieve_relevant_contexts_global_keywords:172 - Global query uses 1 entities, 5 relations, 2 text units
+2025-05-24 14:20:53.695 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.413 | Max budget: $10.000 | Current cost: $0.025, prompt_tokens: 5508, completion_tokens: 691
+2025-05-24 14:20:53.710 | INFO     | Core.Utils.Evaluation:evaluate:184 - Loaded 1 records from ./my_result/multihop-rag/my_test/Results/results.json
+2025-05-24 14:20:53.710 | INFO     | Core.Utils.Evaluation:evaluate:185 - Evaluating short-form mode.
+2025-05-24 14:20:53.710 | INFO     | Core.Utils.Evaluation:print_eval_matrics:212 - In this evaluation, the following metrics are used:
+2025-05-24 14:20:53.710 | INFO     | Core.Utils.Evaluation:print_eval_matrics:213 - accuracy, f1, precision, recall, em
+2025-05-24 14:20:53.711 | INFO     | Core.Utils.Evaluation:short_eval:276 - accuracy: 0.0000
+2025-05-24 14:20:53.711 | INFO     | Core.Utils.Evaluation:short_eval:277 - Precision: 0.0000
+2025-05-24 14:20:53.711 | INFO     | Core.Utils.Evaluation:short_eval:278 - Recall: 0.0000
+2025-05-24 14:20:53.711 | INFO     | Core.Utils.Evaluation:short_eval:279 - F1: 0.0000
+2025-05-24 14:20:53.711 | INFO     | Core.Utils.Evaluation:short_eval:280 - EM: 0.0000
