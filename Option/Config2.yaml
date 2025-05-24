@@ -8,7 +8,7 @@ embedding:
   api_type: "openai"
   base_url: "http://localhost:4000/v1"
   # api_key: "YOUR_API_KEY"
-  model: "text-embedding-3-small"
+  model: "text-embedding-ada-002"
   cache_dir: ""
 #  dimensions: 1024
   max_token_size: 8102
