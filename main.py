@@ -58,10 +58,11 @@ async def wrapper_evaluation(path, opt, result_dir):
 
 
 if __name__ == "__main__":
-    try:
-        # with open("./book.txt") as f:
-        #     doc = f.read()
 
+    # with open("./book.txt") as f:
+    #     doc = f.read()
+
+    try:
         parser = argparse.ArgumentParser()
         parser.add_argument("-opt", type=str, help="Path to option YMAL file.")
         parser.add_argument("-dataset_name", type=str, help="Name of the dataset.")
