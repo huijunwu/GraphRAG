@@ -1,0 +1,126 @@
+2025-05-24 13:55:46.665 | INFO     | Core.Chunk.DocChunk:build_chunks:27 - Starting chunk the given documents
+2025-05-24 13:55:46.668 | INFO     | Core.Storage.ChunkKVStorage:_persist:105 - Writing data into ./my_result/multihop-rag/kgp_passage_of_graph/chunk_storage_chunk_data_idx.pkl and ./my_result/multihop-rag/kgp_passage_of_graph/chunk_storage_chunk_data_key.pkl
+2025-05-24 13:55:46.668 | INFO     | Core.Chunk.DocChunk:build_chunks:74 - ✅ Finished the chunking stage
+2025-05-24 13:55:46.668 | INFO     | Core.GraphRAG:_update_costs_info:205 - Chunking stage cost: Total prompt token: 0, Total completeion token: 0, Total cost: 0
+2025-05-24 13:55:46.668 | INFO     | Core.GraphRAG:_update_costs_info:207 - Chunking time(s): 0.00
+2025-05-24 13:55:46.668 | INFO     | Core.Graph.BaseGraph:build_graph:41 - Starting build graph for the given documents
+2025-05-24 13:55:46.668 | INFO     | Core.Storage.NetworkXStorage:load_graph:97 - Force rebuilding the graph
+2025-05-24 13:55:46.670 | DEBUG    | Core.Graph.BaseGraph:_handle_entity_relation_summary:280 - Trigger summary: chunk-b798fdf71a136d0db86c946e2033b5d8
+2025-05-24 13:55:46.674 | DEBUG    | Core.Graph.BaseGraph:_handle_entity_relation_summary:280 - Trigger summary: chunk-8e5f329230ee7a86720839537f2cef10
+2025-05-24 13:55:46.676 | DEBUG    | Core.Graph.BaseGraph:_handle_entity_relation_summary:280 - Trigger summary: chunk-d6c9802c9a70f52746f96123f01156aa
+2025-05-24 13:55:46.679 | DEBUG    | Core.Graph.BaseGraph:_handle_entity_relation_summary:280 - Trigger summary: chunk-210559aca27923e109d71a3f819b11c6
+2025-05-24 13:56:15.485 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.010 | Max budget: $10.000 | Current cost: $0.010, prompt_tokens: 1415, completion_tokens: 500
+2025-05-24 13:56:15.527 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.021 | Max budget: $10.000 | Current cost: $0.010, prompt_tokens: 1426, completion_tokens: 500
+2025-05-24 13:56:15.573 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.031 | Max budget: $10.000 | Current cost: $0.010, prompt_tokens: 1436, completion_tokens: 500
+2025-05-24 13:56:15.617 | INFO     | Core.Common.CostManager:update_cost:57 - Total running cost: $0.041 | Max budget: $10.000 | Current cost: $0.010, prompt_tokens: 1384, completion_tokens: 500
+2025-05-24 13:56:15.618 | INFO     | Core.Graph.PassageGraph:_build_graph:128 - Constructing graph finished
+2025-05-24 13:56:15.618 | INFO     | Core.Storage.NetworkXStorage:_persist:109 - Writing graph into ./my_result/multihop-rag/kgp_passage_of_graph/graph_storage_nx_data.graphml
+2025-05-24 13:56:15.618 | INFO     | Core.Storage.NetworkXStorage:write_nx_graph:45 - Writing graph with 5 nodes, 0 edges
+2025-05-24 13:56:15.622 | ERROR    | __main__:<module>:100 - main exception: GraphML does not support type <class 'NoneType'> as data values.
+Traceback (most recent call last):
+
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 455, in get_xml_type
+    return self.xml_type[key]
+           │    │        └ <class 'NoneType'>
+           │    └ {<class 'numpy.float64'>: 'float', <class 'numpy.float32'>: 'float', <class 'numpy.float16'>: 'float', <class 'numpy.int64'>:...
+           └ <networkx.readwrite.graphml.GraphMLWriterLxml object at 0x728bdc3fdf60>
+
+KeyError: <class 'NoneType'>
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+> File "/home/pig/github/GraphRAG/main.py", line 87, in <module>
+    asyncio.run(digimon.insert(corpus))
+    │       │   │       │      └ [{'title': 'Here are over 40 last-minute gifts you can still nab before Christmas', 'content': "## Here are over 40 last-minu...
+    │       │   │       └ <function GraphRAG.insert at 0x728bfe6a9750>
+    │       │   └ GraphRAG(private_context=None, private_config=Config(extra_fields=None, working_dir='./my_result/multihop-rag', exp_name='my_...
+    │       └ <function run at 0x728d69510040>
+    └ <module 'asyncio' from '/home/pig/miniconda3/envs/digimon/lib/python3.10/asyncio/__init__.py'>
+
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object GraphRAG.insert at 0x728bfd442960>
+           │    └ <function BaseEventLoop.run_until_complete at 0x728d69511a20>
+           └ <_UnixSelectorEventLoop running=False closed=True debug=False>
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished name='Task-1' coro=<GraphRAG.insert() done, defined at /home/pig/github/GraphRAG/Core/GraphRAG.py:210> excepti...
+
+  File "/home/pig/github/GraphRAG/Core/GraphRAG.py", line 232, in insert
+    await self.graph.build_graph(await self.doc_chunk.get_chunks(), self.config.graph.force)
+          │    │     │                 │    │         │             │    └ <property object at 0x728d0af5b4c0>
+          │    │     │                 │    │         │             └ GraphRAG(private_context=None, private_config=Config(extra_fields=None, working_dir='./my_result/multihop-rag', exp_name='my_...
+          │    │     │                 │    │         └ <function DocChunk.get_chunks at 0x728d5298d7e0>
+          │    │     │                 │    └ <Core.Chunk.DocChunk.DocChunk object at 0x728bfd485240>
+          │    │     │                 └ GraphRAG(private_context=None, private_config=Config(extra_fields=None, working_dir='./my_result/multihop-rag', exp_name='my_...
+          │    │     └ <function BaseGraph.build_graph at 0x728d07b2d6c0>
+          │    └ <Core.Graph.PassageGraph.PassageGraph object at 0x728bfd484a60>
+          └ GraphRAG(private_context=None, private_config=Config(extra_fields=None, working_dir='./my_result/multihop-rag', exp_name='my_...
+
+  File "/home/pig/github/GraphRAG/Core/Graph/BaseGraph.py", line 49, in build_graph
+    await self._persist_graph(force)
+          │    │              └ True
+          │    └ <function BaseGraph._persist_graph at 0x728d07b2dd80>
+          └ <Core.Graph.PassageGraph.PassageGraph object at 0x728bfd484a60>
+
+  File "/home/pig/github/GraphRAG/Core/Graph/BaseGraph.py", line 286, in _persist_graph
+    await self._graph.persist(force)
+          │    │      │       └ True
+          │    │      └ <function NetworkXStorage.persist at 0x728d07b2c040>
+          │    └ NetworkXStorage(config=None, namespace=<Core.Storage.NameSpace.Namespace object at 0x728bfd4853c0>)
+          └ <Core.Graph.PassageGraph.PassageGraph object at 0x728bfd484a60>
+
+  File "/home/pig/github/GraphRAG/Core/Storage/NetworkXStorage.py", line 183, in persist
+    return await self._persist(force)
+                 │    │        └ True
+                 │    └ <function NetworkXStorage._persist at 0x728d07b0b760>
+                 └ NetworkXStorage(config=None, namespace=<Core.Storage.NameSpace.Namespace object at 0x728bfd4853c0>)
+
+  File "/home/pig/github/GraphRAG/Core/Storage/NetworkXStorage.py", line 110, in _persist
+    NetworkXStorage.write_nx_graph(self.graph, self.graphml_xml_file)
+    │               │              │    │      │    └ <property object at 0x728d08191ad0>
+    │               │              │    │      └ NetworkXStorage(config=None, namespace=<Core.Storage.NameSpace.Namespace object at 0x728bfd4853c0>)
+    │               │              │    └ <property object at 0x728d0880b920>
+    │               │              └ NetworkXStorage(config=None, namespace=<Core.Storage.NameSpace.Namespace object at 0x728bfd4853c0>)
+    │               └ <staticmethod(<function NetworkXStorage.write_nx_graph at 0x728d07b0b400>)>
+    └ <class 'Core.Storage.NetworkXStorage.NetworkXStorage'>
+
+  File "/home/pig/github/GraphRAG/Core/Storage/NetworkXStorage.py", line 48, in write_nx_graph
+    nx.write_graphml(graph, file_name)
+    │  │             │      └ './my_result/multihop-rag/kgp_passage_of_graph/graph_storage_nx_data.graphml'
+    │  │             └ <networkx.classes.graph.Graph object at 0x728bfd486da0>
+    │  └ <function write_graphml_lxml at 0x728d07f00d30>
+    └ <module 'networkx' from '/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/__init__.py'>
+
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/utils/decorators.py", line 789, in func
+    return argmap._lazy_compile(__wrapper)(*args, **kwargs)
+           │      │                         │       └ {}
+           │      │                         └ (<networkx.classes.graph.Graph object at 0x728bfd486da0>, './my_result/multihop-rag/kgp_passage_of_graph/graph_storage_nx_dat...
+           │      └ <staticmethod(<function argmap._lazy_compile at 0x728d0814b7f0>)>
+           └ <class 'networkx.utils.decorators.argmap'>
+  File "<class 'networkx.utils.decorators.argmap'> compilation 5", line 5, in argmap_write_graphml_lxml_1
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 176, in write_graphml_lxml
+    writer = GraphMLWriterLxml(
+             └ <class 'networkx.readwrite.graphml.GraphMLWriterLxml'>
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 746, in __init__
+    self.add_graph_element(graph)
+    │    │                 └ <networkx.classes.graph.Graph object at 0x728bfd486da0>
+    │    └ <function GraphMLWriterLxml.add_graph_element at 0x728d07f01b40>
+    └ <networkx.readwrite.graphml.GraphMLWriterLxml object at 0x728bdc3fdf60>
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 787, in add_graph_element
+    T = self.get_xml_type(self.attr_type(k, "node", v))
+        │    │            │    │         │          └ None
+        │    │            │    │         └ 'description'
+        │    │            │    └ <function GraphMLWriter.attr_type at 0x728d07f013f0>
+        │    │            └ <networkx.readwrite.graphml.GraphMLWriterLxml object at 0x728bdc3fdf60>
+        │    └ <function GraphML.get_xml_type at 0x728d07f01360>
+        └ <networkx.readwrite.graphml.GraphMLWriterLxml object at 0x728bdc3fdf60>
+  File "/home/pig/miniconda3/envs/digimon/lib/python3.10/site-packages/networkx/readwrite/graphml.py", line 457, in get_xml_type
+    raise TypeError(
+
+TypeError: GraphML does not support type <class 'NoneType'> as data values.
